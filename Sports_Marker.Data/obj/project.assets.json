@@ -1615,38 +1615,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
-      },
-      "Sports_Marker.Business/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
-          "Microsoft.EntityFrameworkCore": "6.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8",
-          "Sports_Marker.Data": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Sports_Marker.Business.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Sports_Marker.Business.dll": {}
-        }
-      },
-      "Sports_Marker.Data/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "EntityFramework": "6.4.4",
-          "Microsoft.AspNetCore.Mvc.Core": "2.2.5",
-          "Microsoft.EntityFrameworkCore": "6.0.8",
-          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.8"
-        },
-        "compile": {
-          "bin/placeholder/Sports_Marker.Data.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Sports_Marker.Data.dll": {}
-        }
       }
     }
   },
@@ -5701,26 +5669,15 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
-    },
-    "Sports_Marker.Business/1.0.0": {
-      "type": "project",
-      "path": "../Sports_Marker.Business/Sports_Marker.Business.csproj",
-      "msbuildProject": "../Sports_Marker.Business/Sports_Marker.Business.csproj"
-    },
-    "Sports_Marker.Data/1.0.0": {
-      "type": "project",
-      "path": "../Sports_Marker.Data/Sports_Marker.Data.csproj",
-      "msbuildProject": "../Sports_Marker.Data/Sports_Marker.Data.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "EntityFramework >= 6.4.4",
       "Microsoft.AspNetCore.Mvc.Core >= 2.2.5",
       "Microsoft.EntityFrameworkCore >= 6.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.8",
-      "Microsoft.EntityFrameworkCore.Tools >= 6.0.8",
-      "Sports_Marker.Business >= 1.0.0",
-      "Sports_Marker.Data >= 1.0.0"
+      "Microsoft.EntityFrameworkCore.Tools >= 6.0.8"
     ]
   },
   "packageFolders": {
@@ -5730,11 +5687,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker\\Sports_Marker.Web.csproj",
-      "projectName": "Sports_Marker.Web",
-      "projectPath": "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker\\Sports_Marker.Web.csproj",
+      "projectUniqueName": "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker.Data\\Sports_Marker.Data.csproj",
+      "projectName": "Sports_Marker.Data",
+      "projectPath": "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker.Data\\Sports_Marker.Data.csproj",
       "packagesPath": "C:\\Users\\joaoportugal\\.nuget\\packages\\",
-      "outputPath": "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker\\obj\\",
+      "outputPath": "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5754,14 +5711,7 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {
-            "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker.Business\\Sports_Marker.Business.csproj": {
-              "projectPath": "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker.Business\\Sports_Marker.Business.csproj"
-            },
-            "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker.Data\\Sports_Marker.Data.csproj": {
-              "projectPath": "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker.Data\\Sports_Marker.Data.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
@@ -5774,6 +5724,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "EntityFramework": {
+            "target": "Package",
+            "version": "[6.4.4, )"
+          },
           "Microsoft.AspNetCore.Mvc.Core": {
             "target": "Package",
             "version": "[2.2.5, )"
@@ -5804,9 +5758,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

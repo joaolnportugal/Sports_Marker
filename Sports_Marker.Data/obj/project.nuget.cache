@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A0j+TuM5qu9xQlTISk/x0sSlCEBElKusnMCEtAaa7mSzTA/RRtHhPWKunMHFWWZagaqECT9acw/uG0DDj8ZRbw==",
+  "dgSpecHash": "v9HCoo636T6RGYzp/n2M2Iiz8TWRcSIC1z22dof4Li5DB3SDfCuaLZqnP8PoAmS2Pn3/u51fQVxh6mWri4RQyQ==",
   "success": true,
-  "projectFilePath": "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker\\Sports_Marker.Web.csproj",
+  "projectFilePath": "C:\\Code\\BlissAcademy\\Sports_Marker\\Sports_Marker.Data\\Sports_Marker.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\joaoportugal\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\joaoportugal\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
