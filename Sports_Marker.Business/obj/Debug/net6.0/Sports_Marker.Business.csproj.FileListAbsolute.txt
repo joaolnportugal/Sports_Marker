@@ -1,0 +1,17 @@
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\obj\Debug\net6.0\Sports_Marker.Business.csproj.AssemblyReference.cache
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\obj\Debug\net6.0\Sports_Marker.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\obj\Debug\net6.0\Sports_Marker.Business.AssemblyInfoInputs.cache
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\obj\Debug\net6.0\Sports_Marker.Business.AssemblyInfo.cs
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\obj\Debug\net6.0\Sports_Marker.Business.csproj.CoreCompileInputs.cache
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\bin\Debug\net6.0\Sports_Marker.Business.deps.json
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\bin\Debug\net6.0\Sports_Marker.Business.runtimeconfig.json
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\bin\Debug\net6.0\Sports_Marker.Business.dll
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\bin\Debug\net6.0\Sports_Marker.Business.pdb
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\bin\Debug\net6.0\Sports_Marker.Data.dll
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\bin\Debug\net6.0\Sports_Marker.Data.pdb
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\obj\Debug\net6.0\Sports_Marker.Business.csproj.CopyComplete
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\obj\Debug\net6.0\Sports_Marker.Business.dll
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\obj\Debug\net6.0\refint\Sports_Marker.Business.dll
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\obj\Debug\net6.0\Sports_Marker.Business.pdb
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\obj\Debug\net6.0\Sports_Marker.Business.genruntimeconfig.cache
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Business\obj\Debug\net6.0\ref\Sports_Marker.Business.dll

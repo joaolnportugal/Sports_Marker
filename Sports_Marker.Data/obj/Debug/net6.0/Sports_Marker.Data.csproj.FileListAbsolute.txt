@@ -1,0 +1,14 @@
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\obj\Debug\net6.0\Sports_Marker.Data.csproj.AssemblyReference.cache
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\obj\Debug\net6.0\Sports_Marker.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\obj\Debug\net6.0\Sports_Marker.Data.AssemblyInfoInputs.cache
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\obj\Debug\net6.0\Sports_Marker.Data.AssemblyInfo.cs
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\obj\Debug\net6.0\Sports_Marker.Data.csproj.CoreCompileInputs.cache
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\bin\Debug\net6.0\Sports_Marker.Data.deps.json
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\bin\Debug\net6.0\Sports_Marker.Data.runtimeconfig.json
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\bin\Debug\net6.0\Sports_Marker.Data.dll
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\bin\Debug\net6.0\Sports_Marker.Data.pdb
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\obj\Debug\net6.0\Sports_Marker.Data.dll
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\obj\Debug\net6.0\refint\Sports_Marker.Data.dll
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\obj\Debug\net6.0\Sports_Marker.Data.pdb
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\obj\Debug\net6.0\Sports_Marker.Data.genruntimeconfig.cache
+C:\Code\BlissAcademy\Sports_Marker\Sports_Marker.Data\obj\Debug\net6.0\ref\Sports_Marker.Data.dll

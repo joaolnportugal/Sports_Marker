@@ -49,6 +49,9 @@ namespace Sports_Marker.Data.Models
                 .HasDefaultValue(true)
                 .IsRequired();
 
+            builder.Property(x => x.Id)
+               .IsRequired();
+
 
         }
     }

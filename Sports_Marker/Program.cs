@@ -1,7 +1,13 @@
+using Sports_Marker.Web.Infrastructure.Extensions;
+
 var builder = WebApplication.CreateBuilder(args);
 
+
+builder.Services.AddControllers();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAppDependencies(builder.Configuration);
 
 var app = builder.Build();
 

@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,8 +13,9 @@ namespace Sports_Marker.Data.Models
     {
         public Guid Id { get; set; }
         public DateTimeOffset Start { get; set; }
-        public DateTimeOffset Now { get; set; }
-        public DateTimeOffset Diference{ get; set; }
+        public DateTimeOffset Stop { get; set; }
+        public DateTimeOffset Restart { get; set; }
+
     }
 
     public class EntityBaseConfiguration<TEntity> : IEntityTypeConfiguration<TEntity>
@@ -28,15 +30,17 @@ namespace Sports_Marker.Data.Models
                 .ValueGeneratedOnAdd()
                 .IsRequired();
 
-            builder.Property(x => x.Now)
-              .HasDefaultValueSql("Now()")
+            builder.Property(x => x.Stop)
+              .HasDefaultValueSql("GETUTCDATE()")
               .ValueGeneratedOnAdd()
               .IsRequired();
 
-            builder.Property(x => x.Diference)
-              .HasDefaultValueSql("DATEPART(mi, Now - Start)")
-              .ValueGeneratedOnAdd()
-              .IsRequired();
+            builder.Property(x => x.Restart)
+             .HasDefaultValueSql("GETUTCDATE()")
+             .ValueGeneratedOnAdd()
+             .IsRequired();
+
+
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Sports_Marker.Data.Models
 {
     public interface IUnitOfWork : IDisposable
     {
-        IGenericRepo<Team> TeamRepo { get; }
+        IGenericRepo<Marker> Marker { get; }
         void Save();
     }
 }

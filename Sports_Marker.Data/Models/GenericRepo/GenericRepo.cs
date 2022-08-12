@@ -7,10 +7,10 @@ namespace Sports_Marker.Data.Models.GenericRepo
         where TEntity : EntityBase
     {
         IQueryable<TEntity> PrepareQuery();
-        TEntity Find(int id);
+        TEntity Find(Guid id);
         void Add(TEntity entity);
         int Save();
-        int Update(TEntity entity);
+        
 
     }
     public class GenericRepo<TEntity> : IGenericRepo<TEntity>
@@ -28,7 +28,7 @@ namespace Sports_Marker.Data.Models.GenericRepo
         public IQueryable<TEntity> PrepareQuery() =>
             dbSet.AsQueryable();
 
-        public TEntity Find(int id)
+        public TEntity Find(Guid id)
             => PrepareQuery().SingleOrDefault(x => x.Id == id);
 
         public void Add(TEntity entity) =>
@@ -39,7 +39,6 @@ namespace Sports_Marker.Data.Models.GenericRepo
         public int Save()
             => _dbContext.SaveChanges();
 
-        public int Update(TEntity entity)
-            => _dbContext.EditChanges();
+       
     }
 }
