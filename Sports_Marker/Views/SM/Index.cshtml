@@ -1,0 +1,123 @@
+﻿@using Sports_Marker.Web.Models
+@model EnterGameViewModel
+
+<!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+  <style>
+    .cascading-right {
+      margin-right: -50px;
+    }
+
+    @@media (max-width: 991.98px) {
+      .cascading-right {
+        margin-right: 0;
+      }
+    }
+  </style>
+
+  <!-- Jumbotron -->
+  <div class="container py-5">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Register your team</h2>
+            <form>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
+             @* <div class="row">
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="form3Example1" class="form-control" />
+                    <label class="form-label" for="form3Example1">First name</label>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <div class="form-outline">
+                    <input type="text" id="form3Example2" class="form-control" />
+                    <label class="form-label" for="form3Example2">Last name</label>
+                  </div>
+                </div>
+              </div>*@
+
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input  id="team-name" class="form-control" />
+                <label class="fw-bold mb-5" for="team-name">Team Name</label>
+              </div>
+
+              <!-- Password input -->
+             @* <div class="form-outline mb-4">
+                <input type="password" id="form3Example4" class="form-control" />
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>*@
+
+              <!-- Checkbox -->
+            @*  <div class="form-check d-flex justify-content-center mb-4">
+                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+                <label class="form-check-label" for="form2Example33">
+                  Subscribe to our newsletter
+                </label>
+              </div>*@
+
+            <!-- Color Selector-->
+                        <div class="mb-4">
+                            
+                            <br />
+                            @*<div class="form-control">*@
+                                @foreach (var color in Model.AvailableColors)
+                                {
+                                    <input type="radio" class="btn-check" asp-for="SelectedColor" id="@color.Name" value="@color.Id" autocomplete="off">
+                                    <label style="font-size:12px" class="btn @color.CssClassName" for="@color.Name">@color.Name</label>
+                                }
+                                <br />
+                                <span asp-validation-for="SelectedColor" class="text-danger"></span>
+                                <label class="fw-bold mb-5">Team Color</label>
+                            @*</div>*@
+                        </div>
+                        <br />
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Enter Game
+              </button>
+
+          
+
+
+              <!-- Register buttons -->
+              @*<div class="text-center">
+                <p>or sign up with:</p>
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                  <i class="fab fa-google"></i>
+                </button>
+
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                  <i class="fab fa-twitter"></i>
+                </button>
+
+                <button type="button" class="btn btn-link btn-floating mx-1">
+                  <i class="fab fa-github"></i>
+                </button>
+              </div>*@
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img src="https://previews.dropbox.com/p/thumb/ABoBj8BUEVO10fdwuvwEK67XscuTVwZFSW6ZA-nJtfKBWDMo964l6bhBha44LQTlT5Xz9zBr_kGw_SPkx_7Zy3xLgEdwv4_yXuDLBYBeiL_iOl4M8y0fJHlmtk04doxjjQ5-yvmTjFirJsBwtqShZ8r5rXEDoMlYkaCqKIHRBL-uKS0Ta9q2Jig6FFssRA-dzwWzbJi8rFbwdoD9vdtwRWoF57hbb5yJrVyrz5DBb1gcglYACw8klGO7EH5T_o_DBMVeeeMoSwtM1scMBpJ7VNJ3bw7xUJnu3R82w5s1IVJT7ZgaZokYOpBl7-Sr4mip3MlgxKHZjiUH-f-pioDIg1b5lLZu4r7maHYULshQlAVnY55hWNh0ISGvaorw4WOh0qQ/p.png" class="w-100 rounded-4 shadow-4"
+          alt="" />
+      </div>
+    </div>
+  </div>
+  <!-- Jumbotron -->
+</section>
+<!-- Section: Design Block -->
+    
+
