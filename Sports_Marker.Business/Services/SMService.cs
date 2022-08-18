@@ -15,10 +15,9 @@ namespace Sports_Marker.Business.Services
         Marker CreateMarker(Marker marker);
         Marker GetTeam(string team, bool trackEntity);
         Marker GetId (Guid id);
-        
-
-
-
+        Marker GetGoals(int goals, bool trackEntity);
+        Marker GetFouls(int fouls, bool trackEntity);
+        Marker GetTime(DateTimeOffset time, bool trackEntity);
     }
 
     public class SMService : ISMService
@@ -51,6 +50,30 @@ namespace Sports_Marker.Business.Services
             }
         }
 
+        public Marker GetFouls(int fouls, bool trackEntity)
+        {
+            var query = _markerRepo.PrepareQuery();
+            if (!trackEntity)
+            {
+                query = query.AsNoTracking();
+            }
+            return query.SingleOrDefault(x => x.fouls == fouls);
+        }
+
+     
+
+     
+
+        public Marker GetGoals(int goals, bool trackEntity)
+        {
+            var query = _markerRepo.PrepareQuery();
+            if (!trackEntity)
+            {
+                query = query.AsNoTracking();
+            }
+            return query.SingleOrDefault(x => x.goals == goals);
+        }
+
         public Marker GetId(Guid id)
         {
             return _markerRepo.Find(id);
@@ -74,6 +97,14 @@ namespace Sports_Marker.Business.Services
             return query.SingleOrDefault(x => x.team == team);
         }
 
-     
+        public Marker GetTime(DateTimeOffset time, bool trackEntity)
+        {
+            var query = _markerRepo.PrepareQuery();
+            if (!trackEntity)
+            {
+                query = query.AsNoTracking();
+            }
+            return query.SingleOrDefault(x => x.Start == time);
+        }
     }
 }

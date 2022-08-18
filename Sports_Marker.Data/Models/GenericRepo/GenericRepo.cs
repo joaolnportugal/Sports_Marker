@@ -8,6 +8,7 @@ namespace Sports_Marker.Data.Models.GenericRepo
     {
         IQueryable<TEntity> PrepareQuery();
         TEntity Find(Guid id);
+      
         void Add(TEntity entity);
         int Save();
         
@@ -39,6 +40,6 @@ namespace Sports_Marker.Data.Models.GenericRepo
         public int Save()
             => _dbContext.SaveChanges();
 
-       
+
     }
 }

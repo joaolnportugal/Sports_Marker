@@ -25,7 +25,7 @@
             ">
           <div class="card-body p-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">Register your team</h2>
-            <form>
+            <form asp-controller="sm" asp-action="index" method="post">
               <!-- 2 column grid layout with text inputs for the first and last names -->
              @* <div class="row">
                 <div class="col-md-6 mb-4">
@@ -44,8 +44,9 @@
 
               <!-- Email input -->
               <div class="form-outline mb-4">
-                <input  id="team-name" class="form-control" />
-                <label class="fw-bold mb-5" for="team-name">Team Name</label>
+                <input asp-for="Team" id="team-name" class="form-control" />
+                <label class="fw-bold mb-5" asp-for="Team">Team Name</label>
+                <span asp-validation-for="Team" class="text-danger"></span>
               </div>
 
               <!-- Password input -->
@@ -79,7 +80,7 @@
                         </div>
                         <br />
               <!-- Submit button -->
-              <button type="submit" class="btn btn-primary btn-block mb-4">
+              <button onclick=" window.open('https://localhost:7243/SM/View/','_blank')" type="submit" formmethod="post" class="btn btn-primary btn-block mb-4">
                 Enter Game
               </button>
 
@@ -111,7 +112,7 @@
       </div>
 
       <div class="col-lg-6 mb-5 mb-lg-0">
-        <img src="https://previews.dropbox.com/p/thumb/ABoBj8BUEVO10fdwuvwEK67XscuTVwZFSW6ZA-nJtfKBWDMo964l6bhBha44LQTlT5Xz9zBr_kGw_SPkx_7Zy3xLgEdwv4_yXuDLBYBeiL_iOl4M8y0fJHlmtk04doxjjQ5-yvmTjFirJsBwtqShZ8r5rXEDoMlYkaCqKIHRBL-uKS0Ta9q2Jig6FFssRA-dzwWzbJi8rFbwdoD9vdtwRWoF57hbb5yJrVyrz5DBb1gcglYACw8klGO7EH5T_o_DBMVeeeMoSwtM1scMBpJ7VNJ3bw7xUJnu3R82w5s1IVJT7ZgaZokYOpBl7-Sr4mip3MlgxKHZjiUH-f-pioDIg1b5lLZu4r7maHYULshQlAVnY55hWNh0ISGvaorw4WOh0qQ/p.png" class="w-100 rounded-4 shadow-4"
+        <img src="https://www.dropbox.com/s/4f0bl7tjb0vprld/football%20aesthetic.png?raw=1" class="w-100 rounded-4 shadow-4"
           alt="" />
       </div>
     </div>

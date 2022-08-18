@@ -1,5 +1,113 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@using Sports_Marker.Web.Models
+@model ViewSMViewModel
+
+
+
+
+@*
+<div id="markerPartial">
+
+    @foreach (var marker in Model.markers)
+
+    {
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+
+          <div class="card-header" @Model.teamColor>Header</div>
+          <div class="card-body">
+            <h5 class="card-title">@Model.team</h5>
+            <p class="card-text">Mambélicos</p>
+          </div>
+
+        </div>
+    }
+
+
+
+</div>*@
+
+<div class="card mb-3" style="max-width: 18rem;"  @Model.colorCssClasses>
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h5 class="card-title">Primary card title</h5>
+    <p class="card-text">@Model.team</p>
+  </div>
+</div>
+@*
+<div id="messageListPartial">
+@foreach (var marker in Model.markers)
+    {            
+        <li class="list-group-item">
+            <div class="row">
+
+               
+                    
+                <div class="col">
+                    <p class="@marker.colorCssClasses ">@marker.team </p>                                        
+                </div>
+                <div class="col-1 d-flex align-items-center" style="width: 106px">
+
+                </div>
+            </div>
+        </li>         
+    }
+</div>*@
+<div class="card">
+        <div class="card-header " @Model.colorCssClasses>
+            <div class="row">
+                <div class="col">
+                    <div class="fs-1 ">
+                        @Model.team                    
+                    </div>
+                </div>           
+            </div>
+        </div>        
+    <div>
+
+                <div class="card">
+        <div class="card-header " @Model.colorCssClasses>
+            <div class="row">
+                <div class="col">
+                    <div class="fs-1 ">
+                        @Model.teamColor                    
+                    </div>
+                </div>           
+            </div>
+        </div>        
+    <div>
+
+                    <div id="messageListPartial">
+@foreach (var message in Model.markers)
+    {            
+        <li class="list-group-item">
+            <div class="row">
+                    
+                <div class="col">
+                    <p class="@message.colorCssClasses ">@message.markerId : <br> @message.team @message.inGame</p>                                        
+                </div>
+                <div class="col-1 d-flex align-items-center" style="width: 106px">
+
+                </div>
+            </div>
+        </li>         
+    }
+</div>
+
+
+@*
+<div>
+           <form asp-controller="sm" asp-action="View" method="get" >
+            <button class="btn btn-primary" type="submit">Logout</button>
+                <div class="row mt-3">
+                    <input type="hidden" asp-for="markerId" class="form-control" value="@Model.markerId" />
+                    <input type="hidden" asp-for="inGame" class="form-control" value="@Model.inGame" />
+                    
+                    <input type="hidden" asp-for="teamColor" class="form-control" value="@Model.teamColor" />
+                    <input type="hidden" asp-for="colorCssClasses" class="form-control" value="@Model.colorCssClasses" />
+                    <input type="hidden" asp-for="markers" class="form-control" value="@Model.markers" />
+                    <input type="hidden" asp-for="markerInfo" class="form-control" value="@Model.markerInfo" />
+                    <input type="hidden" asp-for="team" class="form-control" value="@Model.team" />
+                    
+                </div>
+            </form>   
+            
+</div>*@

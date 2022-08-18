@@ -36,12 +36,12 @@ namespace Sports_Marker.Web.Controllers
             };
 
             var enterTeam = _sMService.CreateMarker(marker);
-            return RedirectToAction("View", enterTeam);
+            return RedirectToAction("Index", enterTeam);
         }
 
         public IActionResult View(Marker marker)
         {
-            if (marker.Id == null)
+            if (marker.Id == null )
             {
                 return RedirectToAction("Index");
             }

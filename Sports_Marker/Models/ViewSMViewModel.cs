@@ -17,12 +17,12 @@ namespace Sports_Marker.Web.Models
         //public PartialGoalsViewModel GoalsModel { get; set }
         //public PartialClockViewModel ClockModel { get; set }
 
-        public ViewSMViewModel(Marker marker, List<Marker> markerList, List<Marker> goalList, List<Marker> foulList, DateTimeOffset clock)
+        public ViewSMViewModel(Marker marker, List<Marker> markerList)
         {
             markerId = marker.Id;
             team = marker.team;
             inGame = marker.inGame;
-            teamColor = marker.teamColor;
+            teamColor =marker.teamColor;
             colorCssClasses = teamColor.ToString();
             markers = markerList.Select(t => new MarkerInfo(t)).ToList();
             //FoulsModel = new PartialFoulsViewModel(foulList);
@@ -30,7 +30,7 @@ namespace Sports_Marker.Web.Models
             //ClockModel = new PartialClockViewModel(clock);
         }
 
-        public ViewSMViewModel(Marker marker, List<Marker> markers1)
+        public ViewSMViewModel()
         {
         }
     }
