@@ -27,9 +27,4 @@
     <ProjectReference Include="..\Sports_Marker.Data\Sports_Marker.Data.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Controllers\API\" />
-    <Folder Include="Models\Dtos\" />
-  </ItemGroup>
-
 </Project>

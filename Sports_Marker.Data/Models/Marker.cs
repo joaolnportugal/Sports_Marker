@@ -29,6 +29,8 @@ namespace Sports_Marker.Data.Models
         {
             base.Configure(builder);
 
+            
+
             builder.Property(x => x.team)
                 .HasMaxLength(20)
                 .IsRequired();
@@ -49,8 +51,8 @@ namespace Sports_Marker.Data.Models
                 .HasDefaultValue(true)
                 .IsRequired();
 
-            builder.Property(x => x.Id)
-               .IsRequired();
+            //builder.Property(x => x.Id)
+            //   .IsRequired();
 
 
         }

@@ -2,112 +2,319 @@
 @model ViewSMViewModel
 
 
-
-
-@*
-<div id="markerPartial">
-
-    @foreach (var marker in Model.markers)
-
-    {
-        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-
-          <div class="card-header" @Model.teamColor>Header</div>
-          <div class="card-body">
-            <h5 class="card-title">@Model.team</h5>
-            <p class="card-text">Mambélicos</p>
-          </div>
-
-        </div>
-    }
+@{
+    Guid markerId = Model.markerId;
+    Guid markerInfoId = Model.markerInfo.markerId;
+}
 
 
 
-</div>*@
-
-<div class="card mb-3" style="max-width: 18rem;"  @Model.colorCssClasses>
-  <div class="card-header">Header</div>
-  <div class="card-body">
-    <h5 class="card-title">Primary card title</h5>
-    <p class="card-text">@Model.team</p>
-  </div>
-</div>
-@*
-<div id="messageListPartial">
-@foreach (var marker in Model.markers)
-    {            
-        <li class="list-group-item">
-            <div class="row">
-
-               
-                    
-                <div class="col">
-                    <p class="@marker.colorCssClasses ">@marker.team </p>                                        
-                </div>
-                <div class="col-1 d-flex align-items-center" style="width: 106px">
-
-                </div>
-            </div>
-        </li>         
-    }
-</div>*@
-<div class="card">
-        <div class="card-header " @Model.colorCssClasses>
-            <div class="row">
-                <div class="col">
-                    <div class="fs-1 ">
-                        @Model.team                    
-                    </div>
-                </div>           
-            </div>
-        </div>        
-    <div>
-
-                <div class="card">
-        <div class="card-header " @Model.colorCssClasses>
-            <div class="row">
-                <div class="col">
-                    <div class="fs-1 ">
-                        @Model.teamColor                    
-                    </div>
-                </div>           
-            </div>
-        </div>        
-    <div>
-
-                    <div id="messageListPartial">
-@foreach (var message in Model.markers)
-    {            
-        <li class="list-group-item">
-            <div class="row">
-                    
-                <div class="col">
-                    <p class="@message.colorCssClasses ">@message.markerId : <br> @message.team @message.inGame</p>                                        
-                </div>
-                <div class="col-1 d-flex align-items-center" style="width: 106px">
-
-                </div>
-            </div>
-        </li>         
-    }
-</div>
-
-
-@*
 <div>
-           <form asp-controller="sm" asp-action="View" method="get" >
-            <button class="btn btn-primary" type="submit">Logout</button>
-                <div class="row mt-3">
+           <form asp-controller="SM" asp-action="logout" method="post" >
+            <button class="btn btn-primary" type="submit">Exit Game</button>
+                <div class="input-group mt-3">
                     <input type="hidden" asp-for="markerId" class="form-control" value="@Model.markerId" />
                     <input type="hidden" asp-for="inGame" class="form-control" value="@Model.inGame" />
                     
                     <input type="hidden" asp-for="teamColor" class="form-control" value="@Model.teamColor" />
                     <input type="hidden" asp-for="colorCssClasses" class="form-control" value="@Model.colorCssClasses" />
-                    <input type="hidden" asp-for="markers" class="form-control" value="@Model.markers" />
-                    <input type="hidden" asp-for="markerInfo" class="form-control" value="@Model.markerInfo" />
+                   
                     <input type="hidden" asp-for="team" class="form-control" value="@Model.team" />
+                    
                     
                 </div>
             </form>   
             
-</div>*@
+</div>
+
+<div id="score-card">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="col">
+    <div class="card">
+      @*<img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>*@
+
+
+
+      <!--StopWatch start-->
+
+
+      <div class="stopwatch" id="a-timer">
+
+
+
+    <style>
+
+        .stopwatch {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #eee;
+    padding: 5px;
+    margin: 5px;
+}
+
+    .stopwatch span {
+        font-weight: bold;
+        display: block;
+    }
+
+    .stopwatch a {
+        padding-right: 5px;
+        text-decoration: none;
+    }
+
+
+    </style>
+
+
+
+    </div>
+
+
+      <!--StopWatch end-->
+
+
+
+
+
+
+      
+      <div class="card-body @Model.colorCssClasses" >
+        <h5 class="card-title"  >@Model.team </h5>
+        <p class="card-text">
+         <p>Fouls</p>
+         <div id="goalPartial">
+        <button type="button" id="add-foul" class="btn btn-outline-primary" >+</button>
+        </div>
+           
+         <br />
+         <p>Goals</p>
+         <div id="foulPartial">
+            <button type="button" id="add-goal" class="btn btn-outline-primary" >+</button>
+          </div> 
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+                    <div id="messageListPartial">
+@foreach (var marker in Model.markers)
+    {            
+
+        
+ <div class="card-group">
+    
+
+            <div class="card mb-1 @marker.colorCssClasses "  style="max-width: 18rem; display:flex"  >
+  <div class="card-header">
+      <h4 class="card-title">@marker.team</h4>
+      </div>
+  <div class="card-body">
+    <h6 class="card-title" style=""> 
+        <p class="fouls-marker">Fouls:@marker.fouls
+    </p> 
+        
+    <p> </p> 
+    <br /> 
+    Goals: @marker.goals
+    </h6>
+
+
+    <p class="@marker.colorCssClasses "></p>
+ 
+  @* <div id="foulPartial">@await Html.PartialAsync("Partials/Fouls.cshtml", @Model.FoulsModel)</div>*@
+ 
+   
+  </div>
+</div>
+
+     
+     </div>
+ 
+
+
+ 
+    }
+</div>
+
+
+@section Scripts {
+
+ 
+    <script>
+$(function() {
+    var addFoul = "#add-foul";
+    
+    
+
+        $(addFoul).click(function() {
+            var that = $(this);
+            //var press = that.siblings("press");
+
+                $.ajax('/api/smapi/setfouls?id=' + '@markerId' ,
+                    {
+                        contentType: 'application/json',
+                        method: 'POST',
+                        //data: JSON.stringify({ Foul: press.val() }),
+                        success: function(jqXHR, textStatus) {
+                            location.reload();
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert(textStatus);
+                        }
+                    });
+            
+        });
+})
+</script>
+
+
+<script>
+$(function() {
+    var addFoul = "#add-goal";
+    
+    
+
+        $(addFoul).click(function() {
+            var that = $(this);
+            //var press = that.siblings("press");
+
+                $.ajax('/api/smapi/setgoals?id=' + '@markerId' ,
+                    {
+                        contentType: 'application/json',
+                        method: 'POST',
+                        //data: JSON.stringify({ Foul: press.val() }),
+                        success: function(jqXHR, textStatus) {
+                            location.reload();
+                        },
+                        error: function(jqXHR, textStatus, errorThrown) {
+                            alert(textStatus);
+                        }
+                    });
+            
+        });
+})
+</script>
+
+
+  <script>
+
+        var Stopwatch = function (elem, options) {
+
+    var timer = createTimer(),
+        startButton = createButton("start", start),
+        stopButton = createButton("stop", stop),
+        resetButton = createButton("reset", reset),
+        offset,
+        clock,
+        interval;
+
+    // default options
+    options = options || {};
+    options.delay = options.delay || 1;
+
+    // append elements     
+    elem.appendChild(timer);
+    elem.appendChild(startButton);
+    elem.appendChild(stopButton);
+    elem.appendChild(resetButton);
+
+    // initialize
+    reset();
+
+    // private functions
+    function createTimer() {
+        return document.createElement("span");
+    }
+
+    function createButton(action, handler) {
+        var a = document.createElement("a");
+        a.href = "#" + action;
+        a.innerHTML = action;
+        a.addEventListener("click", function (event) {
+            handler();
+            event.preventDefault();
+        });
+        return a;
+    }
+
+    function start() {
+        if (!interval) {
+            offset = Date.now();
+            interval = setInterval(update, options.delay);
+        }
+    }
+
+    function stop() {
+        if (interval) {
+            clearInterval(interval);
+            interval = null;
+        }
+    }
+
+    function reset() {
+        clock = 0;
+        render(0);
+    }
+
+    function update() {
+        clock += delta();
+        render();
+    }
+
+    function render() {
+        timer.innerHTML = clock / 1000;
+    }
+
+    function delta() {
+        var now = Date.now(),
+            d = now - offset;
+
+        offset = now;
+        return d;
+    }
+
+    // public API
+    this.start = start;
+    this.stop = stop;
+    this.reset = reset;
+};
+
+
+// basic examples
+var elems = document.getElementsByClassName("basic");
+
+for (var i = 0, len = elems.length; i < len; i++) {
+    new Stopwatch(elems[i]);
+}
+
+
+// programmatic examples
+var a = document.getElementById("a-timer");
+aTimer = new Stopwatch(a);
+aTimer.start();
+
+//var b = document.getElementById("b-timer");
+//bTimer = new Stopwatch(b, {
+//    delay: 100
+//});
+//bTimer.start();
+
+//var c = document.getElementById("c-timer");
+//cTimer = new Stopwatch(c, {
+//    delay: 456
+//});
+//cTimer.start();
+
+//var d = document.getElementById("d-timer");
+//dTimer = new Stopwatch(d, {
+//    delay: 1000
+//});
+//dTimer.start();
+
+    </script>
+
+}

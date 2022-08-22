@@ -11,11 +11,21 @@ namespace Sports_Marker.Web.Models
         public bool inGame { get; set; }
         public Color teamColor { get; set; }
         public string colorCssClasses { get; set; }
+        public int fouls { get; set; }
+        public int goals { get; set; }
         public List<MarkerInfo> markers { get; set; } = new List<MarkerInfo>();
         public MarkerInfo markerInfo { get; set; } = new MarkerInfo();
-        //public PartialFoulsViewModel FoulsModel { get; set }
-        //public PartialGoalsViewModel GoalsModel { get; set }
+        public PartialFoulsViewModel FoulsModel { get; set; }
+        public PartialGoalsViewModel GoalsModel { get; set; }
         //public PartialClockViewModel ClockModel { get; set }
+
+
+
+
+        public ViewSMViewModel()
+        {
+        }
+
 
         public ViewSMViewModel(Marker marker, List<Marker> markerList)
         {
@@ -24,15 +34,15 @@ namespace Sports_Marker.Web.Models
             inGame = marker.inGame;
             teamColor =marker.teamColor;
             colorCssClasses = teamColor.ToString();
+            fouls = marker.fouls;
+            goals = marker.goals;
             markers = markerList.Select(t => new MarkerInfo(t)).ToList();
-            //FoulsModel = new PartialFoulsViewModel(foulList);
-            //GoalsModel = new PartialGoalsViewModel(goalList);
+            FoulsModel = new PartialFoulsViewModel(markerList);
+            GoalsModel = new PartialGoalsViewModel(markerList);
             //ClockModel = new PartialClockViewModel(clock);
         }
 
-        public ViewSMViewModel()
-        {
-        }
+       
     }
 
     public class MarkerInfo
@@ -43,6 +53,8 @@ namespace Sports_Marker.Web.Models
         public bool inGame { get; set; }
         public DateTimeOffset clock { get; set; }
         public int fouls { get; set; }
+        public int goals { get; set; }
+
         
 
         public MarkerInfo(Marker marker)
@@ -53,6 +65,7 @@ namespace Sports_Marker.Web.Models
             inGame = marker.inGame;
             clock = marker.Start;
             fouls = marker.fouls;
+            goals = marker.goals;
         }
 
         public MarkerInfo()

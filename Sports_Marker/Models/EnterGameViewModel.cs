@@ -4,21 +4,23 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Sports_Marker.Web.Models
 {
-    public record EnterGameViewModel
+    public record EnterGameViewModel 
     {
         [Display(Name = "Name", Prompt = "Enter Username")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "Please insert a valid Username")]
-        public string Team { get; set; }
+        public string? Team { get; set; }
         public List<Marker> TeamList { get; set; } = new List<Marker>();
         [Range(10, 80,
        ErrorMessage = "Please choose a color")]
         public int SelectedColor { get; set; }
         public List<TeamColor> AvailableColors { get; set; }
-        public bool inGame { get; set; }
-
+        public bool inGame { get; set; } = true;
+        public Guid Id { get; set; }
         public EnterGameViewModel()
         {
             AvailableColors = Enum.GetValues<Color>().Select(c => new TeamColor(c)).ToList();
+            //Id = Guid.NewGuid();
+            
         }
 
         public record TeamColor

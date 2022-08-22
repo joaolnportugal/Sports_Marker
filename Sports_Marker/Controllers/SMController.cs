@@ -33,10 +33,11 @@ namespace Sports_Marker.Web.Controllers
             {
                 team = model.Team,
                 teamColor = (Color)model.SelectedColor,
+                Id = model.Id,
             };
 
             var enterTeam = _sMService.CreateMarker(marker);
-            return RedirectToAction("Index", enterTeam);
+            return RedirectToAction("View", enterTeam);
         }
 
         public IActionResult View(Marker marker)
@@ -48,6 +49,14 @@ namespace Sports_Marker.Web.Controllers
             var markerList = _sMService.GetMarkers();
             var model = new ViewSMViewModel(marker, markerList.ToList());
             return View(model);
+        }
+
+        public IActionResult LogOut([FromForm] ViewSMViewModel model)
+        {
+            var marker = _sMService.GetId(model.markerId);
+            _sMService.LogOut(marker.Id);
+
+            return RedirectToAction("Index");
         }
     }
 }
