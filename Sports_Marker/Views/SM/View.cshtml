@@ -49,18 +49,27 @@
     display: inline-block;
     background-color: white;
     border: 1px solid #eee;
-    padding: 5px;
-    margin: 5px;
+    padding: 15px;
+    margin-right: 75px;
+    margin-left:75px;
+    margin-top: 15px;
+    position:center;
+
+
 }
 
     .stopwatch span {
         font-weight: bold;
+        font-family:Corbel;
         display: block;
+        position:center;
+        margin-left: 85px;
     }
 
     .stopwatch a {
-        padding-right: 5px;
-        text-decoration: none;
+        padding-right: 30px;
+        padding-left: 15px;
+        text-decoration:none;
     }
 
 
@@ -81,26 +90,34 @@
       
       <div class="card-body @Model.colorCssClasses" >
         <h5 class="card-title"  >@Model.team </h5>
-        <p class="card-text">
-         <p>Fouls</p>
+        <a class="card-text">
+         <a>Fouls
          <div id="goalPartial">
         <button type="button" id="add-foul" class="btn btn-outline-primary" >+</button>
         </div>
+        </a>
            
-         <br />
-         <p>Goals</p>
+         
+         <a>Goals
          <div id="foulPartial">
             <button type="button" id="add-goal" class="btn btn-outline-primary" >+</button>
           </div> 
-        </p>
+          </a>
+        </a>
       </div>
     </div>
   </div>
-
+  
+  
 
 </div>
 
-                    <div id="messageListPartial">
+<br />
+
+
+<div id="markerPartial">@await Html.PartialAsync("Partials/TeamMarker.cshtml", @Model.MarkerModel)</div>
+
+                    @*<div id="messageListPartial">
 @foreach (var marker in Model.markers)
     {            
 
@@ -125,7 +142,7 @@
 
     <p class="@marker.colorCssClasses "></p>
  
-  @* <div id="foulPartial">@await Html.PartialAsync("Partials/Fouls.cshtml", @Model.FoulsModel)</div>*@
+
  
    
   </div>
@@ -138,7 +155,7 @@
 
  
     }
-</div>
+</div>*@
 
 
 @section Scripts {
@@ -160,7 +177,9 @@ $(function() {
                         method: 'POST',
                         //data: JSON.stringify({ Foul: press.val() }),
                         success: function(jqXHR, textStatus) {
-                            location.reload();
+                            //location.reload();
+                           
+                            
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
                             alert(textStatus);
@@ -168,6 +187,10 @@ $(function() {
                     });
             
         });
+         setInterval(function() {
+          
+            $("#markerPartial").load('/api/smapi/getPartialMarker');
+        }, 500);
 })
 </script>
 
@@ -188,7 +211,7 @@ $(function() {
                         method: 'POST',
                         //data: JSON.stringify({ Foul: press.val() }),
                         success: function(jqXHR, textStatus) {
-                            location.reload();
+                            //location.reload();
                         },
                         error: function(jqXHR, textStatus, errorThrown) {
                             alert(textStatus);
@@ -196,6 +219,10 @@ $(function() {
                     });
             
         });
+         setInterval(function() {
+          
+            $("#markerPartial").load('/api/smapi/getPartialMarker');
+        }, 500);
 })
 </script>
 

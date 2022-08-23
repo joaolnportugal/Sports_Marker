@@ -38,28 +38,30 @@ namespace Sports_Marker.Web.Controllers.API
         }
 
 
-        [Route("getPartialFouls")]
-        public IActionResult GetPartialFouls(int fouls, bool trackEntity)
+        [Route("getPartialMarker")]
+        public IActionResult GetPartialTeamMarker()
         {
 
-            var _fouls = _sMService.GetFouls(fouls, true);
-            var viewModel = new PartialFoulsViewModel(_fouls);
+            //var _fouls = _sMService.GetFouls(fouls, true);
+            //var _goals = _sMService.GetGoals(goals, true);
+            var markerInfo = _sMService.GetMarkers();
+            var viewModel = new PartialTeamMarkerViewModel(markerInfo);
 
-            return PartialView("Partials/FoulPartial");
+            return PartialView("Partials/TeamMarker", viewModel);
 
         }
 
 
-        [Route("getPartialGoals")]
+        //[Route("getPartialGoals")]
 
-        public IActionResult GetPartialGoals(int goals, bool trackEntity)
-        {
+        //public IActionResult GetPartialGoals(int goals, bool trackEntity)
+        //{
 
-            var _goals = _sMService.GetGoals(goals, true);
-            var viewModel = new PartialFoulsViewModel(_goals);
+        //    var _goals = _sMService.GetGoals(goals, true);
+        //    var viewModel = new PartialTeamMarkerViewModel(_goals,);
 
-            return PartialView("Partials/GoalPartial");
+        //    return PartialView("Partials/GoalPartial");
 
-        }
+        //}
     }
 }

@@ -23,20 +23,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Code/BlissAcademy/Sports_Marker/Sports_Marker/Views/Partials/Fouls.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcRm91bHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Code/BlissAcademy/Sports_Marker/Sports_Marker/Views/Partials/Goals.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcR29hbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Code/BlissAcademy/Sports_Marker/Sports_Marker/Views/Partials/Stopwatch/Stopwatch.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGFydGlhbHNcU3RvcHdhdGNoXFN0b3B3YXRjaC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Code/BlissAcademy/Sports_Marker/Sports_Marker/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Code/BlissAcademy/Sports_Marker/Sports_Marker/Views/Shared/Partials/TeamMarker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBhcnRpYWxzXFRlYW1NYXJrZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Code/BlissAcademy/Sports_Marker/Sports_Marker/Views/Shared/_ValidationScriptsPartial.cshtml]
@@ -45,6 +37,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Code/BlissAcademy/Sports_Marker/Sports_Marker/Views/SM/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU01cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Code/BlissAcademy/Sports_Marker/Sports_Marker/Views/SM/Partials/TeamMarker.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU01cUGFydGlhbHNcVGVhbU1hcmtlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Code/BlissAcademy/Sports_Marker/Sports_Marker/Views/SM/View.cshtml]

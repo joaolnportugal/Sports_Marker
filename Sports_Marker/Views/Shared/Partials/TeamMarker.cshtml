@@ -1,0 +1,44 @@
+﻿@using Sports_Marker.Web.Models
+
+@model PartialTeamMarkerViewModel
+
+
+
+<div id="markerPartial">
+@foreach (var marker in Model.markers)
+    {            
+
+        
+ <div class="card-group">
+    
+
+            <div class="card mb-1 @marker.colorCssClasses "  style="max-width: 18rem; display:flex"  >
+  <div class="card-header">
+      <h4 class="card-title">@marker.team</h4>
+      </div>
+  <div class="card-body">
+    <h6 class="card-title" style=""> 
+        <p class="fouls-marker">Fouls:@marker.fouls
+    </p> 
+        
+    <p> </p> 
+    <br /> 
+    Goals: @marker.goals
+    </h6>
+
+
+    <p class="@marker.colorCssClasses "></p>
+ 
+ 
+   
+  </div>
+</div>
+
+     
+     </div>
+ 
+
+
+ 
+    }
+</div>

@@ -15,9 +15,8 @@ namespace Sports_Marker.Web.Models
         public int goals { get; set; }
         public List<MarkerInfo> markers { get; set; } = new List<MarkerInfo>();
         public MarkerInfo markerInfo { get; set; } = new MarkerInfo();
-        public PartialFoulsViewModel FoulsModel { get; set; }
-        public PartialGoalsViewModel GoalsModel { get; set; }
-        //public PartialClockViewModel ClockModel { get; set }
+        public PartialTeamMarkerViewModel MarkerModel { get; set; }
+   
 
 
 
@@ -37,8 +36,8 @@ namespace Sports_Marker.Web.Models
             fouls = marker.fouls;
             goals = marker.goals;
             markers = markerList.Select(t => new MarkerInfo(t)).ToList();
-            FoulsModel = new PartialFoulsViewModel(markerList);
-            GoalsModel = new PartialGoalsViewModel(markerList);
+            MarkerModel = new PartialTeamMarkerViewModel(markerList);
+         
             //ClockModel = new PartialClockViewModel(clock);
         }
 
